@@ -1,8 +1,10 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
+import { helloWorld } from './db/db.js'
 
 const app = new Hono()
 
+helloWorld()
 app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
